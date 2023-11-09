@@ -16,11 +16,10 @@ const Layout = () => {
         }
     }, [fontsLoaded]);
 
-    useEffect(() => {
-        onLayoutRootView();
-    }, [onLayoutRootView]);
+    if(!fontsLoaded) return null;
 
-    return <Stack />;
+
+    return <Stack onLayout = {onLayoutRootView} />;
 };
 
 export default Layout;
